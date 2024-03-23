@@ -1,0 +1,5 @@
+local ViewId = {
+    LoginView = 1000,
+}
+
+return ViewId

@@ -1,0 +1,46 @@
+local LuaEvent = {}
+
+Class(LuaEvent)
+
+function LuaEvent:ctor()
+    --eventObject包含eventName和subjectList
+    --subject包含subjectObject和callback
+    self.eventObjectList = {}
+end
+
+-- 注册事件
+function LuaEvent:Add(eventName, subjectObject, callback)
+    self.eventObjectList[eventName] = self.eventObjectList[eventName] or {}
+    local subjectList = self.eventObjectList[eventName]
+    local subject = {}
+    subject.subjectObject = subjectObject
+    subject.callback = callback
+
+    table.insert(subjectList, subject)
+end
+
+-- 移除事件
+function LuaEvent:Remove(eventName)
+    if self.eventObjectList ~= nil then
+        self.eventObjectList[eventName] = nil
+    end
+end
+
+-- 派发消息
+function LuaEvent:Dispatch(eventName, ...)
+    if self.eventObjectList ~= nil then
+        local subjectList = self.eventObjectList[eventName]
+        if subjectList ~= nil then
+            local lastIndex = #subjectList
+            for i = 1, lastIndex do
+                subjectList[i].callback(subjectList[i].subjectObject, ...)
+            end
+        end
+    end
+end
+
+function LuaEvent:Clear()
+    self.eventObjectList = {}
+end
+
+return LuaEvent

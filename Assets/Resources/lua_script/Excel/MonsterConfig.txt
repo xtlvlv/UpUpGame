@@ -1,0 +1,6 @@
+local MonsterConfig=
+{
+
+}
+
+return MonsterConfig

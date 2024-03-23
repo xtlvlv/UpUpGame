@@ -1,0 +1,56 @@
+local LuaManager = CS.LuaManager
+local ViewConfig = require("ViewCtrl/ViewConfig")
+local ViewId = require("ViewCtrl/ViewId")
+
+local LoginCtrl = {
+    loginView = nil,
+    loginViewPath = "",
+}
+
+function LoginCtrl:Init()
+    self.loginViewPath = ViewConfig[ViewId.LoginView].prefabPathFileName
+    -- 数据初始化
+end
+
+function LoginCtrl:OnClose()
+    self:RemoveLoginView()
+end
+
+function LoginCtrl:ShowLoginView()
+    if self.loginView == nil then
+        local prefab = CS.UnityEngine.Resources.Load(self.loginViewPath, typeof(CS.UnityEngine.GameObject))
+        if prefab ~= nil then
+            local uiObj = CS.UnityEngine.Object.Instantiate(prefab)
+            local luaView = uiObj:GetComponent("LuaBehaviour")
+            if luaView ~= nil then
+                self.loginView = luaView:GetLuaTable()
+                self.loginView.uiObj = uiObj
+            else
+                print("LoginView prefab has no LuaBehaviour")
+            end
+        else
+            print("LoginView prefab is nil")
+        end
+    end
+
+    if self.loginView ~= nil then
+        self.loginView.Init()
+        self.loginView.UpdateView()
+    else
+        print("LoginView is nil")
+    end
+
+    return self.loginView
+end
+
+function LoginCtrl:RemoveLoginView()
+    if self.loginView ~= nil and self.loginView.uiObj ~= nil then
+        CS.UnityEngine.Object.Destroy(self.loginView.uiObj)
+        self.loginView.uiObj = nil
+    end
+
+    self.loginView = nil
+end
+
+
+return LoginCtrl

@@ -1,0 +1,103 @@
+function Class(module)
+    if module ~= nil then
+        function module.new()
+            module.__index = module
+
+            local moduleInstance = {}
+            setmetatable(moduleInstance, module)
+
+            if moduleInstance.ctor ~= nil then
+                moduleInstance:ctor()
+            end
+
+            return moduleInstance
+        end
+    end
+end
+
+function Inherit(derivedClass, baseClass)
+    if derivedClass ~= nil and baseClass ~= nil then
+        baseClass.__index = baseClass
+        setmetatable(derivedClass, baseClass)
+
+        derivedClass.super = baseClass
+    end
+end
+
+local function GetTableLenth(tableObject)
+    local length = 0
+    for k, v in pairs(tableObject) do
+        length = length + 1
+    end
+    return length
+end
+
+local function DumpTable(tableName, tableObject, indent, resultText)
+    if type(tableObject) == "table" then
+        local localIndent = indent
+        local line = ""
+        if tableName == "" then
+            line = string.format("%s{\n", string.rep("  ", indent))
+        else
+            line = string.format("%s%s={\n", string.rep("  ", indent), tableName)
+        end
+
+        resultText = resultText .. line
+
+        indent = indent + 1
+        local lastIndex = GetTableLenth(tableObject)
+        local index = 1
+        for k, v in pairs(tableObject) do
+            if v ~= nil then
+                if type(v) == "table" then
+                    resultText = DumpTable(k, v, indent, resultText)
+                elseif type(v) == "string" then
+                    local indentString = string.rep("  ", indent)
+                    line = string.format('%s%s="%s"', indentString, k, v)
+                    resultText = resultText .. line
+                elseif type(v) == "function" then
+                    local indentString = string.rep("  ", indent)
+                    line = string.format("%sfunction=%s", indentString, k)
+                    resultText = resultText .. line
+                elseif type(v) == "userdata" then
+                    local indentString = string.rep("  ", indent)
+                    line = string.format("%suserdata=%s", indentString, k)
+                    resultText = resultText .. line
+                elseif type(v) == "thread" then
+                    local indentString = string.rep("  ", indent)
+                    line = string.format("%sthread=%s", indentString, k)
+                    resultText = resultText .. line
+                else
+                    local indentString = string.rep("  ", indent)
+                    line = string.format("%s%s=%s", indentString, k, v)
+                    resultText = resultText .. line
+                end
+            end
+
+            if index ~= lastIndex then
+                resultText = resultText .. ",\n"
+            else
+                resultText = resultText .. "\n"
+            end
+
+            index = index + 1
+        end
+
+        line = string.format("%s}", string.rep("  ", localIndent))
+        resultText = resultText .. line
+    end
+
+    return resultText
+end
+
+function dump(luaObject, tag)
+    if luaObject ~= nil then
+        local resultText = DumpTable("", luaObject, 0, "")
+        if tag ~= nil then
+            local format = "%s=%s"
+            print(string.format(format, tag, resultText))
+        else
+            print(resultText)
+        end
+    end
+end

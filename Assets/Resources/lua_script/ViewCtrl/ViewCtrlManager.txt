@@ -1,0 +1,21 @@
+local LoginCtrl = require("ViewCtrl/LoginView/Ctrl/LoginCtrl")
+
+local ViewCtrlManager = {}
+local opening = false
+
+function ViewCtrlManager.Init()
+    opening = true
+
+    LoginCtrl:Init()
+    -- TODO: 其他界面
+end
+
+function ViewCtrlManager.OnClose()
+    if opening then
+        opening = false
+
+        LoginCtrl:OnClose()
+    end
+end
+
+return ViewCtrlManager

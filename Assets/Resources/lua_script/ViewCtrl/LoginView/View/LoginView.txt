@@ -1,0 +1,38 @@
+local LoginCtrl = require("ViewCtrl/LoginView/Ctrl/LoginCtrl")
+
+function Awake()
+    print("LoginView Awake")
+end
+
+function Start()
+    print("LoginView Start")
+end
+
+function Init()
+    print("LoginView Init")
+
+end
+
+function UpdateView()
+    input_account.text = "default"
+    text_tips.text = ""
+end
+
+
+function OnClickLogin()
+    print("OnClickLoginButton")
+    local account = input_account.text
+    local password = input_password.text
+    if account == password then
+        text_tips.text = "登录成功"
+    else
+        text_tips.text = "登录失败，账号和密码相同"
+    end
+end
+
+function OnClickClose()
+    print("OnClickClose")
+    LoginCtrl:RemoveLoginView()
+end
+
+

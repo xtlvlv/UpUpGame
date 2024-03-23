@@ -1,0 +1,10 @@
+
+local ViewId = require("ViewCtrl/ViewId")
+
+local ViewConfig = {
+
+    [ViewId.LoginView]={id=ViewId.LoginView, prefabPathFileName="ui/lua/ui_login_lua"},
+
+}
+
+return ViewConfig

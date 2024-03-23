@@ -1,0 +1,12 @@
+
+local LoginModelData = {
+    account = "",
+    password = "",
+}
+
+function LoginModelData:Init(data)
+    self.account = data.account
+    self.password = data.password
+end
+
+return LoginModelData

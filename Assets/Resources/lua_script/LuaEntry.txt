@@ -1,0 +1,27 @@
+local ViewCtrlManager = require("ViewCtrl/ViewCtrlManager")
+
+-- lua调试配置，具体参考 emmylua  https://github.com/EmmyLua/IntelliJ-EmmyLua
+
+ --package.cpath = package.cpath .. ';C:/Users/user/AppData/Roaming/JetBrains/Rider2022.2/plugins/EmmyLua/debugger/emmy/windows/x64/?.dll'
+ --local dbg = require('emmy_core')
+ --dbg.tcpConnect('localhost', 9966)
+-- package.cpath = package.cpath .. ';C:/Users/user/AppData/Roaming/JetBrains/Rider2022.2/plugins/EmmyLua/debugger/emmy/windows/x64/?.dll'
+-- local dbg = require('emmy_core')
+-- dbg.tcpListen('localhost', 9966)
+
+local LoginCtrl = require("ViewCtrl/LoginView/Ctrl/LoginCtrl")
+
+function OnOpen()
+    ViewCtrlManager.Init()
+    -- TODO: 其他管理器
+end
+
+function OnClose()
+    ViewCtrlManager.OnClose()
+end
+
+function OnLoadingEnd()
+    LoginCtrl:ShowLoginView()
+end
+
+-- xlua puerts ILRuntime HybirdCLR
