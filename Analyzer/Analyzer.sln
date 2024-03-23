@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeRule", "CodeRule\CodeRule.csproj", "{7F619E21-9024-4844-8B1B-96440D3AD8E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E42F0122-DB80-47AA-AE1D-4A095C4FBF9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E42F0122-DB80-47AA-AE1D-4A095C4FBF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E42F0122-DB80-47AA-AE1D-4A095C4FBF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E42F0122-DB80-47AA-AE1D-4A095C4FBF9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F619E21-9024-4844-8B1B-96440D3AD8E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F619E21-9024-4844-8B1B-96440D3AD8E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F619E21-9024-4844-8B1B-96440D3AD8E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F619E21-9024-4844-8B1B-96440D3AD8E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

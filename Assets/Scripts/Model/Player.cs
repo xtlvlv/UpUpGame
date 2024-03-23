@@ -17,6 +17,10 @@ public class Player
     public  long   Uid;
     public  string Name;
     private int    level;
+    
+    public static string StaticName = "StaticName";
+    public static string StaticName2 = "StaticName";
+
 
     public int Level
     {

@@ -1,0 +1,11 @@
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\obj\Debug\netstandard2.0\CodeRule.csproj.AssemblyReference.cache
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\obj\Debug\netstandard2.0\CodeRule.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\obj\Debug\netstandard2.0\CodeRule.AssemblyInfoInputs.cache
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\obj\Debug\netstandard2.0\CodeRule.AssemblyInfo.cs
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\obj\Debug\netstandard2.0\CodeRule.csproj.CoreCompileInputs.cache
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\obj\Debug\netstandard2.0\CodeRule.sourcelink.json
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\bin\Debug\netstandard2.0\CodeRule.deps.json
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\bin\Debug\netstandard2.0\CodeRule.dll
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\bin\Debug\netstandard2.0\CodeRule.pdb
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\obj\Debug\netstandard2.0\CodeRule.dll
+D:\Unity\github\UpUpDrawTools\Analyzer\CodeRule\obj\Debug\netstandard2.0\CodeRule.pdb
