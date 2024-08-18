@@ -1,0 +1,29 @@
+﻿
+
+<linker>
+
+	<assembly fullname="Assembly-CSharp">
+	    <type fullname="Tutorial.BaseClass" preserve="all"/>
+		<type fullname="Tutorial.TestEnum" preserve="all"/>
+		<type fullname="Tutorial.DerivedClass" preserve="all"/>
+		<type fullname="Tutorial.ICalc" preserve="all"/>
+		<type fullname="Tutorial.DerivedClassExtensions" preserve="all"/>
+		<type fullname="Core.LuaBehaviour" preserve="all"/>
+		<type fullname="Core.LuaBeginDragEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaButtonEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaDragEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaDropEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaEndDragEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaPointerClickEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaPointerDownEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaPointerEnterEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaPointerExitEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaPointerUpEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaScrollEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaToggleEventTrigger" preserve="all"/>
+		<type fullname="Core.LuaButtonScript" preserve="all"/>
+		<type fullname="Tutorial.DerivedClass+TestEnumInner" preserve="all"/>
+		
+	</assembly>
+
+</linker>
