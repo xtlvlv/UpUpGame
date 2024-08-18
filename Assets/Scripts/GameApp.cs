@@ -27,8 +27,7 @@ public class GameApp: MonoBehaviour
 
     private void Start()
     {
-        Player a = new Player();
-        a.MemberClone();
+        
     }
 
     private void Update()
